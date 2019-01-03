@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar y remover dinámicamente - JQuery</title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+</head>
+<body>
+<section id="header">
+    <h2>Facturación</h2>
+    <select name="select-items" id="select-items">
+
+    </select>
+    <button class="btn btn-success" onclick="addRow()" id="add-btn"><i class="glyphicon glyphicon-plus"></i> Agregar ítem</button>
+    <button class="btn btn-success" onclick="addNote()" id="add-btn"><i class="glyphicon glyphicon-plus"></i> Agregar Nota</button>
+    <button class="btn btn-success" onclick="addSpace()" id="add-btn"><i class="glyphicon glyphicon-plus"></i> Agregar Sección</button>
+
+</section>
+<hr>
+<section id="section-content">
+    <div id="div-container-row"  class="hidden ">
+        <input type="text"  readonly="readonly" placeholder="Cód">
+        <input type="text" readonly="readonly" placeholder="Ítem">
+        <input type="number" placeholder="Cantidad">
+        <input type="text" readonly="readonly" placeholder="Precio">
+        <input type="text" readonly="readonly" placeholder="Total">
+        <button class="btn btn-warning remove-btn" targetDiv="" ><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+    <div id="div-container-space"  class="hidden ">
+        <input type="text"  readonly="readonly" placeholder="Cód">
+        <hr>
+        <button class="btn btn-warning remove-btn" targetDiv="" ><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+    <div id="div-container-note"  class="hidden ">
+        <textarea name="nota" id="nota" cols="30" rows="10"></textarea>
+        <button class="btn btn-warning remove-btn" targetDiv="" ><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+</section>
+
+    <script src="action.js"></script>
+</body>
+</html>
